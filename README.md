@@ -1,5 +1,7 @@
 # Coronavirus twitter analysis
 
+Brief Explanation: The `run_maps.sh` file runs `map.py` on all of the zip files in the dataset in parallel, thus making the running process more efficient by going through the zip files simultaneously. In order to determine whether all of the dataset was processed or not, I split the rest of the code into the `viz_maps.sh` file, which puts everything into the `outputs` directory once `run_maps.sh` is finished running. `viz_maps.sh` runs `reduce.py`, which merges the outputs from `map.py` into the `reduced.lang` and `reduced.country` files so that they can be visualized. Next, `viz_maps.sh` runs `visualize.py` in order to count the total number of occurrences of each hashtag in both the `reduced.lang` and `reduced.country` files and displays the output in the `viz_lang` and `viz_country` files. `viz_lang` shows how many times a particular hashtag is used in a tweet in a particular language. Similarly, `viz_country` shows how many times a particular hashtag is used in a tweet in a particular country.
+
 You will scan all geotagged tweets sent in 2020 to monitor for the spread of the coronavirus on social media.
 
 **Due date:** 
